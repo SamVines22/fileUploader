@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('header') %>
+    <h1><%=folderName%></h1>
+    <ul>
+        <%files.map((item)=> {%>
+            <li><a href = "/file/<%=item.id%>"><%=item.name%></a></li>
+        <%})%>
+    </ul>
+    <h3>Add a file to this folder</h3>
+    <form method = "POST" action = "/addfile/<%=folderId%>">
+        <select name = "addFile" id = "addFile">
+        <%otherFiles.map((item)=> {%>
+            <option value="<%=item.id%>"><%=item.name%></option>
+        <%})%>
+    </select> 
+    <button type="submit">Add file</button>
+    </form>
+    <h3>Remove a file from this folder</h3>
+    <form method = "POST" action = "/removefile/<%=folderId%>">
+        <select name = "removeFile" id ="removeFile">
+            <%files.map((item)=> { %>
+                <option value = "<%=item.id%>"><%=item.name%></option>
+            <%})%>
+        </select>
+        <button type="submit">Remove file</button>
+    </form>
+</body>
+</html>

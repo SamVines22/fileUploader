@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Details</title>
+</head>
+<body>
+    <%-include('header')%>
+    <h1><%=file.name%></h1>
+    <h2>See the picture: <a href = "<%=file.url%>"><%=file.name%></a></h2>
+    <h2>Download it here: <a href = "<%=url%>"><%= file.name%></a></h2>
+    <h3>Folders</h3>
+    <%if (folders) {%>
+    <ul>
+        <%folders.map((item)=> { %>
+            <li><a href ="/folders/<%=item.id%>"><%=item.name%></a></li>
+        <%})%>
+    </ul>
+    <%} else {%>
+        <h4>Not in any folders</h4>
+        <%}%>
+    
+    
+</body>
+</html>

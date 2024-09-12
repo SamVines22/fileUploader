@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folders</title>
+</head>
+<body>
+    <%-include('header')%>
+    <h1>File Folders</h1>
+ 
+        <% if (!folders){%>
+            <h3>There are no folders yet why don't you add one!</h3>
+            <%} else {%>
+            
+            <ul>
+                <%folders.map((item)=>{%>
+               <li><a href = "/folders/<%=item.id%>"><%=item.name%></a></li>
+               <%})%>
+            </ul>
+                <%}%>
+             
+    <h3>Add a folder</h3>
+    <form  method = "POST" action = "/folders">
+        <label for = "name">Folder Name</label>
+        <input type = "text" name = "name" id = "name">
+        <button type="submit">Add Folder</button>
+    </form>
+   
+</body>
+</html>

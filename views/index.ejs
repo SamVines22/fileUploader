@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Uploader</title>
+</head>
+<body>
+    <h1>File Uploader!</h1>
+
+    <%-include('header')%>
+    <%if(user){%>
+        <h3>Welcome back <%=user.username%></h3>
+        <a href = "/seefiles">See Files</a>
+        <a href = "/uploadfiles">Upload a file</a>
+        <a href = "/logout">Logout</a>
+        <a href = "/folders">Categories</a>
+        <%} else {%>
+            <h2>Login</h2>
+    <form action = "/login" method = "POST">
+        <lable for = "username">Username</lable>
+        <input type = text id = "username" name = "username">
+        <label for = "password">Password</label>
+        <input type = "password" id = "password" name = "password">
+        <button type = "submit">Login</button>
+    </form>
+    <a href ="/signup">Sign up</a>
+    <%}%>
+    
+</body>
+</html>

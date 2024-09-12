@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+</head>
+<body>
+    <h1>Files</h1>
+    <h2>Welcome <%=user.username%> use the form to upload files</h2>
+    <form method = "POST" action = "/uploadfiles" enctype="multipart/form-data">
+        <label for = "file">Choose a file to upload</label>
+        <input type = "file" name = "file" id = "file">
+        <button type = "submit">Submit</button>
+    </form>
+</body>
+</html>
